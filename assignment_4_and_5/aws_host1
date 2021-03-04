@@ -1,0 +1,20 @@
+[aws-ubuntu]
+ec2-3-88-174-66.compute-1.amazonaws.com
+ec2-54-174-43-175.compute-1.amazonaws.com
+
+[aws-amazon]
+
+
+[aws:children]
+aws-ubuntu
+aws-amazon
+
+[aws:vars]
+ansible_ssh_private_key_file=/home/rick/keys/lab5-rick.pem
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
+[aws-amazon:vars]
+ansible_ssh_user=ec2-user
+
+[aws-ubuntu:vars]
+ansible_ssh_user=ubuntu

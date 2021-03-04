@@ -1,0 +1,14 @@
+[web-server]
+ec2-3-88-174-66.compute-1.amazonaws.com
+
+[db]
+ec2-54-174-43-175.compute-1.amazonaws.com
+
+[cluster:children]
+web-server
+db
+
+[cluster:vars]
+ansible_ssh_private_key_file=/home/rick/keys/lab5-rick.pem
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+ansible_ssh_user=ubuntu
